@@ -12,6 +12,10 @@ public class LoginTest extends BaseTest {
         loginPage.login("standard_user", "secret_sauce");
 
 
+        org.openqa.selenium.support.ui.WebDriverWait wait =
+                new org.openqa.selenium.support.ui.WebDriverWait(driver, java.time.Duration.ofSeconds(5));
+        wait.until(org.openqa.selenium.support.ui.ExpectedConditions.urlContains("inventory.html"));
+
         String currentUrl = driver.getCurrentUrl();
         Assert.assertTrue(currentUrl.contains("inventory.html"), "Login failed!");
     }
