@@ -25,6 +25,14 @@ jobs:
         run: mvn test
         continue-on-error: true
 
+      - name: Print Test Results to Console
+        run: |
+          echo "=================== TEST FAILURES SUMMARY ==================="
+          if [ -f target/surefire-reports/testng-results.xml ]; then
+            cat target/surefire-reports/testng-results.xml | grep -E "exception|message" || echo "No detailed XML exceptions found."
+          fi
+          echo "============================================================="
+
       - name: Upload Test Reports Artifact
         if: always()
         uses: actions/upload-artifact@v4
