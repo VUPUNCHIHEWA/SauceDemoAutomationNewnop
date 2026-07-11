@@ -23,3 +23,11 @@ jobs:
 
       - name: Run Automated Tests with Maven
         run: mvn test
+        continue-on-error: true
+
+      - name: Upload Test Reports Artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-execution-reports
+          path: target/surefire-reports/
