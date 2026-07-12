@@ -6,13 +6,13 @@ import org.openqa.selenium.WebDriver;
 public class CheckoutPage {
     private WebDriver driver;
 
-    // Step 1: Information Locators
+    
     private By txtFirstName = By.id("first-name");
     private By txtLastName = By.id("last-name");
     private By txtPostalCode = By.id("postal-code");
     private By btnContinue = By.id("continue");
 
-    // Step 2: Overview & Finish Locators
+    
     private By btnFinish = By.id("finish");
     private By lblConfirmationHeader = By.className("complete-header");
 
