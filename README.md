@@ -35,6 +35,7 @@ git clone <your-github-repo-url-here>
 cd SauceDemoAutomationNewnop
 
 2. Clean and Run the Suite via Maven Terminal
+
 Open your terminal/command prompt inside the project root folder and execute:
 
 mvn clean test
